@@ -1,0 +1,22 @@
+#include <iostream>
+#include<math.h>
+using namespace std;
+
+int main()
+{
+    long long int n;
+    cin>>n;
+    if(n==1){cout<<"Neither prime nor composite";}
+    else if(n==2){cout<<"Prime";}
+    else if(n%2==0){cout<<"Not Prime";}
+    else{
+        int k=3;
+        while(k<sqrt(n))
+        {
+            if(n%k==0){cout<<"Not prime.";break;}
+            else{k+=1;}
+        }
+        if(k>=sqrt(n)){cout<<"Prime.";}
+    }
+    return 0;
+}
