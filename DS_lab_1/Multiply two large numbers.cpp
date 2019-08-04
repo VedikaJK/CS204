@@ -6,6 +6,10 @@ string revcon(int [], int);
 
 
 int main(){
+	int T;
+	cin>>T;
+	while(T>0)
+	{
 string s1,s2;
 cin>>s1>>s2;
 int l1,l2;
@@ -62,10 +66,14 @@ ans1=addn(ans1,ans2);
 
 
 }
-cout<<"Answer = "<<ans1<<endl;
-
+cout<<ans1<<endl;
+	
+	T--;}
   return 0;
 }
+	
+	
+	
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 string addn(string s1,string s2){
 
