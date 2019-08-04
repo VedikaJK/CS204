@@ -16,7 +16,10 @@ void printrev(int a[],int n){
 
 
 int main(){
-
+int T;
+   cin>>T;
+   while(T>0)
+   {
    string s1,s2;
    cin>> s1>>s2;
 
@@ -122,7 +125,8 @@ res[m]=sub;
 
 if(sign==0){cout<<'-';}
    printrev(res,m);
-
+   T--;
+   }
 
 
     return 0;
