@@ -8,7 +8,10 @@ void printrev(int a[],int n){
     cout<<endl;
 }
 int main(){
-
+int T;
+cin>>T;
+while(T>0)
+{
    string s1,s2;
    cin>> s1>>s2;
 
@@ -68,7 +71,7 @@ if(c>0){res[m]=c;
 
 
    printrev(res,m);
-
+T--;}
 
     return 0;
 }
