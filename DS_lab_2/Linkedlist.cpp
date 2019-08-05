@@ -74,7 +74,7 @@ prev=curr;
 curr=curr->next;
 if(curr==NULL){cout<<"-1"<<endl;return ;} //not found
          }
-//if(prev==NULL){DelFirst();return;}  //found at first node
+
 prev->next=curr->next;
 delete curr;
 cout<<"0"<<endl;
