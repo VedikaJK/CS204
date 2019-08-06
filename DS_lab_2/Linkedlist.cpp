@@ -83,9 +83,9 @@ cout<<"0"<<endl;
 
 }
 //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-int Length()
+long long int Length()
 {
-int l=0;
+long long int l=0;
 node* tmp=head;
 while(tmp!=NULL)
 {
@@ -97,7 +97,7 @@ return 0;
 }
 //11111111111111111111111111111111111111111111111111111111111111111111111111111
 
-void Search(float d)
+void Search(long double d)
 {
 node* temp=head;
 if(temp==NULL){return;}
@@ -149,7 +149,7 @@ case(3): float n,v;
 cin>>n>>v;
 a.Del(n,v);
 break;
-case(4): float b;cin>>b;
+case(4): long double b;cin>>b;
 a.Search(b);
 break;
 case(5):float c,m;cin>>c>>m;
