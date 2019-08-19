@@ -1,4 +1,3 @@
-
 #include <bits/stdc++.h>
 #include<stack>
 #include<string>
@@ -280,7 +279,7 @@ int main()
 			getline(cin,str2);
 			str+=str2;
 			str+=")";
-			infixToPostfix(s);
+			infixToPostfix(str);
 			cout<<"\n";
 		}
 	}
