@@ -137,8 +137,7 @@ long long eval(et* root)
 }
 
 //function to convert infix expression to postfix expression
-
-bool flag=false;
+int cnt=0;
 void infixToPostfix(string s)
 {
     std::stack<char> st;
@@ -159,6 +158,8 @@ void infixToPostfix(string s)
         	i=j-1;
         	ns.push_back(to_string(num));
         	num=0;
+        	if(cnt)
+                goto label;
         	continue;
         }
 
@@ -166,10 +167,7 @@ void infixToPostfix(string s)
         // until an ‘(‘ is encountered.
         else if(flag||s[i] == ')')
         {
-            if(flag){
-                flag=false;
-                i--;
-            }
+            label:
             while(st.top() != 'N' && st.top() != '(')
             {
                 char c = st.top();
@@ -183,6 +181,11 @@ void infixToPostfix(string s)
                 char c = st.top();
                 st.pop();
             }
+            if(cnt)
+                cnt--;
+            if(cnt)
+                goto label;
+            else continue;
         }
 
         // If the scanned character is an ‘(‘, push it to the stack.
