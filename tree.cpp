@@ -165,7 +165,7 @@ void infixToPostfix(string s)
 
         // If the scanned character is an ‘)’, pop and to output string from the stack
         // until an ‘(‘ is encountered.
-        else if(flag||s[i] == ')')
+        else if(s[i] == ')')
         {
             label:
             while(st.top() != 'N' && st.top() != '(')
@@ -196,7 +196,7 @@ void infixToPostfix(string s)
         //If an operator is scanned
         else{
             if(s[i]=='-'&&(i==0||s[i-1]=='('||isOperator(s[i-1]))){
-                flag=true;
+                cnt++;
                 st.push('(');
                 ns.push_back("0");
                }
