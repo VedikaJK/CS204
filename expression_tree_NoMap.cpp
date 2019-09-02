@@ -1,8 +1,6 @@
 
 #include <bits/stdc++.h>
 
-#define o_set tree<int, null_type,less<int>, rb_tree_tag,tree_order_statistics_node_update>
-#define o_setlong long tree<ll, null_type,less<ll>, rb_tree_tag,tree_order_statistics_node_update>
 
 using namespace std;
 
