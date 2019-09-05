@@ -38,9 +38,9 @@ int Tree::height(node *temp)
     int h = 0;
     if (temp != nullptr)
     {
-        int l_height = height (temp->left);
-        int r_height = height (temp->right);
-        int max_height = max (l_height, r_height);
+        int l_ht = height (temp->left);
+        int r_ht = height (temp->right);
+        int max_height = max (l_ht, r_ht);
         h = max_height + 1;
     }
     return h;
@@ -51,9 +51,9 @@ int Tree::height(node *temp)
  
 int Tree::diff(node *temp)
 {
-    int l_height = height (temp->left);
-    int r_height = height (temp->right);
-    int b_factor= l_height - r_height;
+    int l_ht = height (temp->left);
+    int r_ht = height (temp->right);
+    int b_factor= l_ht - r_ht;
     return b_factor;
 }
 
@@ -107,15 +107,15 @@ node *Tree::RL_rot(node *parent)
 
 node *Tree::balance(node *temp)
 {
-    int bal_factor = diff (temp);
-    if (bal_factor > 1)
+    int b_factor = diff (temp);
+    if (b_factor > 1)
     {
         if (diff (temp->left) > 0)
             temp = LL_rot (temp);
         else
             temp = LR_rot (temp);
     }
-    else if (bal_factor < -1)
+    else if (b_factor < -1)
     {
         if (diff (temp->right) > 0)
             temp = RL_rot (temp);
@@ -128,30 +128,30 @@ node *Tree::balance(node *temp)
 
 // Insert Element into the tree
  
-node* Tree::insert_node(node* root,int uid, int* rech)
+node* Tree::insert_node(node* root,int uid, int* rchg)
 {
     if (root == nullptr)
     {
         root = new node;
         root->user_id = uid;
-        root->recharge = *rech;
+        root->recharge = *rchg;
         root->left = nullptr;
         root->right = nullptr;
         return root;
     }
     else if (uid < root->user_id)
     {
-        root->left = insert_node(root->left, uid, rech);
+        root->left = insert_node(root->left, uid, rchg);
         root = balance (root);
     }
     else if (uid > root->user_id)
     {
-        root->right = insert_node(root->right, uid, rech);
+        root->right = insert_node(root->right, uid, rchg);
         root = balance (root);
     }
     else{
-        root->recharge+=*rech;
-        *rech=root->recharge;
+        root->recharge+=*rchg;
+        *rchg=root->recharge;
         return root;
     }
     return root;
@@ -188,5 +188,4 @@ int main()
 	}
     return 0;
 }
-
 
