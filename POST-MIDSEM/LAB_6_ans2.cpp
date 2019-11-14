@@ -1,11 +1,21 @@
 #include<bits/stdc++.h>
-using namespace std;
+#define gc getchar_unlocked
+#define fo(i,n) for(i=0;i<n;i++)
+#define Fo(i,k,n) for(i=k;i<n;i++)
+#define REP(i,a,b) for(ll i=a;i<b;i++)
+#define lli long long int
+#define pii pair<int,int>
+#define vi vector<int>
+#define pb push_back
+#define mp make_pair
+#define mod 1000000007
+#define ll long long
+#define SIZE 100
 #define M 10000019
 #define num 5
-#define ll long long
-#define REP(i,a,b) for(ll i=a;i<b;i++)
+using namespace std;
 
-static bool hsh[num][M];
+static bool hashingTable[num][M];
 static ll pr[num];
 
 ll ord(char c)
@@ -54,7 +64,7 @@ int main()
             v.push_back(s);
             REP(j,0,num)
             {
-                hsh[j][func(t,pr[j],M)]=true;
+                hashingTable[j][func(t,pr[j],M)]=true;
             }
         }
     }
@@ -63,7 +73,7 @@ int main()
         bool flag=true;
         REP(j,0,num)
         {
-            if(hsh[j][func(s,pr[j],M)]==false) flag=false;
+            if(hashingTable[j][func(s,pr[j],M)]==false) flag=false;
         }
         if(flag==true)
         {
